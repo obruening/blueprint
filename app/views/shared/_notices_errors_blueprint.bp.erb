@@ -1,0 +1,26 @@
+<%- if model and !model.errors.empty? -%>
+  <block>
+    <span class="title">Errors</span><br/>
+    <%- model.errors.each do |e, d| -%>
+      <span class="negative">
+        <%= d %>
+      </span><br/>
+    <%- end -%>
+  </block>
+<%- end -%>
+
+
+<% if flash[:notice] %>
+  <block>
+    <span class="positive">
+      <%= flash[:notice] %>
+    </span>
+  </block>
+<% end %>
+<% if flash[:error] %>
+  <block>
+    <span class="negative">
+      <%= flash[:error] %>
+    </span>
+  </block>
+<% end %>

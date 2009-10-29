@@ -1,0 +1,6 @@
+log/*.log
+Schemas/*
+artikel/*
+doc/api
+doc/app
+nbproject/*

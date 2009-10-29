@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <models>
+    <model id="first">
+      <instance>
+        <data xmlns="">
+          <name><%= params[:name] %></name>
+          <age><%= params[:age] %></age>
+          <authenticity_token><%= form_authenticity_token %></authenticity_token>
+        </data>
+      </instance>
+      <submission resource="<%= users_path %>" method="urlencoded-post"></submission>
+    </model>
+  </models>
+  <content>
+    <module>
+      <header layout="simple">
+        <layout-items>
+          <block class="title">Blueprint CRUD</block>
+        </layout-items>
+      </header>
+      <module>
+        <header layout="simple">
+          <layout-items>
+            <block class="title">New User</block>
+          </layout-items>
+        </header>
+        <%= render :partial => 'shared/notices_errors_blueprint', :locals => {:model => @user} %>
+        <input model="first" ref="name"><label>Name</label></input>
+        <input model="first" ref="age"><label>Age</label></input>
+        <submit model="first"><label>Create</label></submit>
+        <block>
+          <inline-trigger>
+            <label>Cancel</label>
+            <load event="activate" resource="<%= users_path %>"/>
+          </inline-trigger>
+        </block>
+      </module>
+    </module>
+  </content>
+</page>

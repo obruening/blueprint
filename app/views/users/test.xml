@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page style="collection">
+
+    <page-header>
+        <masthead layout="simple">
+            <layout-items>
+                <image fill-style='crop' resource='widget:<r:assets:url title="27-planet" />' />
+                <block class="title">Messages</block>
+            </layout-items>
+        </masthead>
+    </page-header>
+
+
+    <content>
+        <module>
+            <header layout="simple">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="27-planet" />' />
+                    <block class="title">Blueprint CRUD</block>
+                </layout-items>
+            </header>
+            <block>
+                iPhone UI icons are 24-bit PNG images used as a mask to
+                generate selected and unselected button states. Dimensions
+                should be about 30×30 pixels for tab bar icons and
+                about 20×20 pixels for toolbar and navigation icons.<br/><br/>
+                <strong>Zwischenüberschrift</strong>
+                <br/>
+                iPhone UI icons are 24-bit PNG images used as a mask to
+                generate selected and unselected button states. Dimensions
+                should be about 30×30 pixels for tab bar icons and
+                about 20×20 pixels for toolbar and navigation icons.<br/><br/>
+                Und hier geht es weiter zu
+                <inline-trigger>
+                    <label>Google</label>
+                    <load event="activate" resource="http://google.de" />
+                </inline-trigger>
+            </block>
+        </module>
+        <module>
+            <header layout="simple">
+                <layout-items>
+                    <block class="title">Top News</block>
+                </layout-items>
+            </header>
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="09-chat2" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="27-planet" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+        </module>
+        <module>
+            <header layout="simple">
+                <layout-items>
+                    <block class="title">Old News</block>
+                </layout-items>
+            </header>
+
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="12-eye" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="17-bar-chart" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="108-badge" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="20-gear2" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+            <placard layout="card" class="link">
+                <layout-items>
+                    <image fill-style='crop' resource='widget:<r:assets:url title="10-medical" />' />
+                    <block>Here's something neat</block>
+                    <block class="subtext">Posted one hour ago</block>
+                </layout-items>
+                <load event="activate" resource="pages.bp" />
+            </placard>
+        </module>
+
+        
+
+    </content>
+</page>

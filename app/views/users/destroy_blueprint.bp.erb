@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <models>
+    <model id="first">
+      <instance>
+        <data xmlns="">
+          <authenticity_token><%= form_authenticity_token %></authenticity_token>
+          <_method>delete</_method>
+        </data>
+      </instance>
+      <submission resource="<%= user_path(@user) %>" method="urlencoded-post"></submission>
+    </model>
+  </models>
+  <content>
+    <module>
+      <header layout="simple">
+        <layout-items>
+          <block class="title">Blueprint CRUD</block>
+        </layout-items>
+      </header>
+      <module>
+        <header layout="simple">
+          <layout-items>
+            <block class="title">Delete User</block>
+          </layout-items>
+        </header>
+        <%= render :partial => 'shared/notices_errors_blueprint', :locals => {:model => @user} %>
+        <block>
+          <span class="negative">
+            Are you sure ?
+          </span>
+        </block>
+        <block>
+          <strong>Name</strong> <%= @user.name -%>
+        </block>
+        <block>
+          <strong>Age</strong> <%= @user.age -%>
+        </block>
+        <submit model="first"><label>Delete</label></submit>
+        <block>
+          <inline-trigger>
+            <label>Cancel</label>
+            <load-page event="activate" page="<%= user_path(@user) %>" />
+          </inline-trigger>
+        </block>
+      </module>
+    </module>
+  </content>
+</page>

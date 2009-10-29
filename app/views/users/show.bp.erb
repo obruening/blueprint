@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <content>
+    <module>
+      <header layout="simple">
+        <layout-items>
+          <block class="title">Blueprint CRUD</block>
+        </layout-items>
+      </header>
+      <module>
+        <header layout="simple">
+          <layout-items>
+            <block class="title">Show User</block>
+          </layout-items>
+        </header>
+        <%= render :partial => 'shared/notices_errors_blueprint', :locals => {:model => @user} %>
+        <block>
+          <strong>Name</strong> <%= @user.name -%>
+        </block>
+        <block>
+          <strong>Age</strong> <%= @user.age -%>
+        </block>
+        <link-set>
+          <inline-trigger>
+            <label>Edit</label>
+            <load-page event="activate" page="<%= edit_user_path(@user) %>" />
+          </inline-trigger>
+          <inline-trigger>
+            <label>Back</label>
+            <load-page event="activate" page="<%= users_path %>" />
+          </inline-trigger>
+          <inline-trigger>
+            <label>Delete</label>
+            <load-page event="activate" page='<%= "#{destroy_blueprint_users_path}/#{@user.id}" %>' />
+          </inline-trigger>
+        </link-set>
+      </module>
+    </module>
+  </content>
+</page>

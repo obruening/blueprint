@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <content>
+    <module>
+      <header layout="simple">
+        <layout-items>
+          <block class="title">Blueprint CRUD</block>
+        </layout-items>
+      </header>
+      <module>
+        <header layout="simple">
+          <layout-items>
+            <block class="title">List Users</block>
+          </layout-items>
+        </header>
+        <%= render :partial => 'shared/notices_errors_blueprint', :locals => {:model => nil} %>
+        <%- @users.each do |user| -%>
+          <placard layout="simple" class="link">
+            <layout-items>
+              <block class="title"><%= user.name -%></block>
+            </layout-items>
+            <load event="activate" resource="<%= user_path(user).sub('/','') -%>" />
+          </placard>
+        <%- end -%>
+        <%= will_paginate(@users,
+                          :renderer => BlueprintLinkRenderer,
+                          :page_links => false,
+                          :previous_label => "Previous",
+                          :next_label => "Next") %>
+        <block>
+          <inline-trigger>
+            <label>New</label>
+            <load event="activate" resource="<%= new_user_path %>"/>
+          </inline-trigger>
+        </block>
+      </module>
+    </module>
+  </content>
+</page>

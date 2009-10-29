@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+  <models>
+    <model id="first">
+      <instance>
+        <data xmlns="">
+          <name><%= error_messages_for(:user, :name).empty? ? @user.name : params[:name] %></name>
+          <age><%= error_messages_for(:user, :age).empty? ? @user.age : params[:age] %></age>
+          <authenticity_token><%= form_authenticity_token %></authenticity_token>
+          <_method>put</_method>
+        </data>
+      </instance>
+      <submission resource="<%= user_path(@user) %>" method="urlencoded-post"></submission>
+    </model>
+  </models>
+  <content>
+    <module>
+      <header layout="simple">
+        <layout-items>
+          <block class="title">Blueprint CRUD</block>
+        </layout-items>
+      </header>
+      <module>
+        <header layout="simple">
+          <layout-items>
+            <block class="title">Edit User</block>
+          </layout-items>
+        </header>
+        <%= render :partial => 'shared/notices_errors_blueprint', :locals => {:model => @user} %>
+        <input model="first" ref="name"><label>Name</label></input>
+        <input model="first" ref="age"><label>Age</label></input>
+        <submit model="first"><label>Update</label></submit>
+        <link-set>
+          <inline-trigger>
+            <label>Show</label>
+            <load-page event="activate" page="<%= user_path(@user) %>" />
+          </inline-trigger>
+          <inline-trigger>
+            <label>Back</label>
+            <load-page event="activate" page="<%= users_path %>" />
+          </inline-trigger>
+        </link-set>
+      </module>
+    </module>
+  </content>
+</page>
